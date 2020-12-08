@@ -1,8 +1,11 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: StatefulSet
 metadata:
-  name: sample-rs
+  name: sample-statefulset-ondelete
 spec:
+  updateStrategy:
+    type: OnDelete
+  serviceName: sample-statefulset-ondelete
   replicas: 3
   selector:
     matchLabels:
@@ -13,5 +16,5 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:1.16
+        - name: nginx-container
+          image: nginx:1.16
