@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: sample-resourcequota
+  namespace: default
+spec:
+  hard:
+    # Number of creatable resources
+    count/configmaps: 10
