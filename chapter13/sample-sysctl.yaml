@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-sysctl
+spec:
+  containers:
+  - name: tools-container
+    image: amsy810/tools:v2.0
+  securityContext:
+    sysctls:
+    - name: net.core.somaxconn
+      value: "12345"

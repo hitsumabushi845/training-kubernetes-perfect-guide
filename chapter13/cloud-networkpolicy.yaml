@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cloud-networkpolicy
+spec:
+  # Allow all outbound traffics and Deny all inbound traffics
+  podSelector: {}
+  egress:
+  - {}
+  policyTypes:
+  - Ingress
+  - Egress
