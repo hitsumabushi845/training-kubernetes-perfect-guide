@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-all-networkpolicy
+spec:
+  # Allow all traffics(Used to configure network policy as blacklist)
+  podSelector: {}
+  egress:
+  - {}
+  ingress:
+  - {}
+  policyTypes:
+  - Ingress
+  - Egress
